@@ -45,3 +45,8 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Specifics
+.sass-cache
+*.css.map
+/scss_watcher.bat

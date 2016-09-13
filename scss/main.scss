@@ -1,0 +1,387 @@
+@charset "UTF-8";
+@import "common.scss";
+
+#mainBody {
+    background-color: $mainColor1;
+    color: $mainColor3;
+}
+
+#mainWrapper {
+    @include flexbox();
+    flex-direction: column;
+    
+    max-width: 1000px;
+    min-height: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+#mainHeader {
+    @include box-shadow(0 5px 10px -5px #c7c7c7);
+    @include border-radius(0 0 5px 5px);
+    
+    background-color: $mainColor2;
+    margin-bottom: 10px;
+    padding: 10px;
+    position: relative;
+    
+    .logo {
+        display: none;
+    }
+    
+    .pageSwitcherWrap {
+        .pageSwitcher {
+            border-bottom: 1px solid #ccc;
+            display: inline-block;
+            padding: 5px 10px;
+            text-align: center;
+            text-transform: uppercase;
+            vertical-align: middle;
+            width: 48%;
+
+            &.sel {
+                border-bottom-color: $mainColor4;
+            }
+
+            &:nth-child(1) {
+                margin-right: 2%;
+            }
+
+            &:nth-child(2) {
+                margin-left: 2%;
+            }
+        }
+    }
+}
+
+main {
+    @include flex(1);
+    
+    position: relative;
+}
+
+#mainFooter {
+    @include box-shadow(0 -5px 10px -5px #c7c7c7);
+    @include border-radius(5px 5px 0 0);
+    
+    background-color: $mainColor2;
+    margin-top: 10px;
+    padding: 10px;
+    
+    .contacts {
+        position: relative;
+        
+        li {
+            display: inline-block;
+            vertical-align: middle;
+
+            a {
+                background-color: $mainColor1;
+                border: 2px solid $mainColor4;
+                border-radius: 50%;
+                display: table-cell;
+                height: 28px;
+                text-align: center;
+                vertical-align: middle;
+                width: 28px;
+                
+                &:hover {
+                    background-color: #666;
+                    
+                    .fa {
+                        color: #fff;
+                    }
+                }
+                
+                .fa {
+                    color: $mainColor4;
+                }
+            }
+            
+            &.phone {
+                position: absolute;
+                right: 0;
+                
+                .number {
+                    color: $mainColor3;
+                    display: table-cell;
+                    font-weight: 700;
+                    padding-left: 5px;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}
+
+#info {
+    .infoBlock {
+        @include border-radius(3px);
+    
+        background-color: $mainColor2;
+        color: $mainColor3;
+        padding: 10px 10px 15px 10px;
+        text-align: center;
+        
+        &:not(:first-child) {
+            margin-top: 10px;
+        }
+        
+        &.main {
+            .data {
+                margin-top: 12px;
+                
+                .title {
+                    font-weight: 700;
+                    margin-bottom: 4px;
+                }
+                
+                .val {
+                    
+                }
+                
+                &.skills {
+                    ul {
+                        li {
+                            background-color: $mainColor1;
+                            border: 2px solid #ccc;
+                            border-radius: 6px;
+                            display: inline-block;
+                            margin: 4px 4px 0 0;
+                            padding: 2px 4px 4px 4px;
+                            vertical-align: middle;
+                            width: 6em;
+                        }
+                    }
+                }
+            }
+        }
+        
+        &.exp {
+            .data {
+                div {
+                    margin-top: 4px;
+                }
+                
+                .where {
+                    font-weight: 700;
+                }
+                
+                .post {
+                    font-style: italic;
+                }
+                
+                .when {
+                    font-size: 0.9em;
+                }
+            }
+        }
+        
+        &.edu {
+            .data {
+                div {
+                    margin-top: 4px;
+                }
+                
+                .where {
+                    font-weight: 700;
+                }
+                
+                .spec {
+                    font-style: italic;
+                }
+                
+                .when {
+                    font-size: 0.9em;
+                }
+            }
+        }
+        
+        h1 {
+            color: $mainColor4;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+        
+        .icon {
+            .fa {
+                font-size: 28px;
+                
+                &:before {
+                    color: #009688;
+                }
+            }
+        }
+        
+        .data {
+            margin-top: 15px;
+        }
+    }
+}
+
+#works {
+    background-color: $mainColor2;
+    color: $mainColor3;
+    padding: 10px 10px 15px 10px;
+    text-align: center;
+    
+    ul {
+        li {
+            background: url('/img/notebook.png') no-repeat;
+            display: inline-block;
+            height: 220px;
+            margin: 10px;
+            padding-bottom: 40px;
+            position: relative;
+            text-align: center;
+            vertical-align: top;
+            width: 300px;
+            
+            img {
+                border: 2px solid #ccc;
+                margin: 14px 0 0 1px;
+            }
+            
+            .linkWrap {
+                bottom: 0;
+                height: 40px;
+                overflow: hidden;
+                padding: 5px;
+                position: absolute;
+                text-overflow: ellipsis;
+                width: 100%;
+                
+                a {
+                    font-size: 18px;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+#avatar {
+    border: 3px solid #fff;
+    border-radius: 50%;
+}
+
+img {
+    &.loading {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+#whaleWisdom {
+    display: none;
+}
+
+@include respond-to-screen('sm') {
+    #mainHeader {
+        min-height: 140px;
+        padding: 10px 20px 10px 340px;
+        
+        .logo {
+            display: block;
+            left: 20px;
+            line-height: 0;
+            position: absolute;
+        }
+    }
+    
+    #whaleWisdom {
+        background-color: $mainColor1;
+        border-radius: 10px;
+        color: #999;
+        display: block;
+        margin: 20px 0 0 0;
+        padding: 10px 20px;
+        
+        .citate {
+            &:before {
+                content: '\201C';
+            }
+            
+            &:after {
+                content: '\201D';
+            }
+            
+            .cursor {
+                animation: blink 700ms infinite;
+            }
+            
+            .text {
+                font-style: italic;
+            }
+        }
+        
+        .author {
+            display: none;
+            
+            &:before {
+                content: '\2014';
+                margin: 0 4px;
+            }
+        }
+        
+        &.said {
+            .author {
+                display: block;
+            }
+        }
+    }
+    
+    #info {
+        .infoBlock {
+            text-align: left;
+            
+            h1 {
+                display: table;
+                padding: 0 0 5px 0;
+                position: relative;
+                
+                &:after {
+                    border-bottom: 1px solid #ccc;
+                    bottom: 0;
+                    content: '';
+                    height: 1px;
+                    left: 0;
+                    margin-left: -10px;
+                    position: absolute;
+                    width: 110%;
+                }
+            }
+            
+            #avatar {
+                margin-left: 10px;
+            }
+            
+            .dataWrap {
+                display: inline-block;
+                margin-left: 15px;
+                vertical-align: top;
+                
+                &.forSkills {
+                    margin-left: 30px;
+                    width: 300px;
+                }
+            }
+            
+            &.exp,
+            &.edu {
+                .data {
+                    padding-left: 50px;
+                    position: relative;
+                    
+                    .icon {
+                        left: 0;
+                        margin-top: 0;
+                        position: absolute;
+                        top: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
