@@ -200,7 +200,7 @@ main {
   padding: 10px 10px 15px 10px;
   text-align: center; }
   #works ul li {
-    background: url("/img/notebook.png") no-repeat;
+    background: url("img/notebook.png") no-repeat;
     display: inline-block;
     height: 220px;
     margin: 10px;
