@@ -73,21 +73,21 @@ $lg-screen: 1200px;
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 400;
-    src: local('Exo 2'), local('Exo2-Regular'), url(fonts/MJip7cr_UKpMiRlnw9dEtaCWcynf_cDxXwCLxiixG1c.woff) format('woff');
+    src: local('Exo 2'), local('Exo2-Regular'), url(/fonts/MJip7cr_UKpMiRlnw9dEtaCWcynf_cDxXwCLxiixG1c.woff) format('woff');
 }
 
 @font-face {
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 700;
-    src: local('Exo 2 Bold'), local('Exo2-Bold'), url(fonts/_yeyO5FlfE2FZh25hTeRLnYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+    src: local('Exo 2 Bold'), local('Exo2-Bold'), url(/fonts/_yeyO5FlfE2FZh25hTeRLnYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
 }
 
 @font-face {
     font-family: 'Exo 2';
     font-style: italic;
     font-weight: 400;
-    src: local('Exo 2 Italic'), local('Exo2-Italic'), url(fonts/l5cZY-FlVggZMInUQZUkGQLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+    src: local('Exo 2 Italic'), local('Exo2-Italic'), url(/fonts/l5cZY-FlVggZMInUQZUkGQLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
 }
 
 html,
