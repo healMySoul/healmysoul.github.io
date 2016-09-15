@@ -23,7 +23,7 @@ function initMainContent() {
     loadData();
     
     function loadData() {
-        var $loading = $('<img class="loading" src="img/loading.gif">');
+        var $loading = $('<img class="loading" src="/img/loading.gif">');
         var dataFor = window.location.hash.substr(1);
         
         $('#mainHeader .pageSwitcher').removeClass('sel');
@@ -31,8 +31,15 @@ function initMainContent() {
         
         $('main').html($loading);
     
-        setTimeout(function() {
-            $('main').load('include-html/' + dataFor + '.html'); 
+        setTimeout(function() {            
+            $.ajax({
+                url: '/include-html/' + dataFor + '.html',
+                type: 'GET',
+                cache: false,
+                success: function(html) {
+                    $("main").html(html);
+                }
+            });
         }, 333);
     }
 }
