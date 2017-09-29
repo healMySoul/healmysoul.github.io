@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="icon" href="/favicon.png" type="image/png">
+</head>
+<body id="mainBody">
+<div id="mainWrapper">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <div id="chart_div"></div>
+</div>
+<script src="/js/jquery-3.1.0.min.js"></script>
+<script src="/js/main.js"></script>
+
+<script>
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+    google.charts.setOnLoadCallback(drawAxisTickColors);
+
+    function drawAxisTickColors() {
+        var data = google.visualization.arrayToDataTable([
+            ['Plans', 'Paid', 'Left to pay', { role: 'annotation' }],
+            ['Saving SPAN', 65, 20, '$100 * 12 Months * 60 Years (Total: $6,000.00)'],
+            ['Medical Life', 30, 69, 'Lupsum payment: $5,000.00'],
+        ]);
+
+        var options = {
+            title: 'Saving plans',
+            height: 400,
+            chartArea: {width: '50%'},
+            hAxis: {
+                title: 'Years',
+                minValue: 0,
+                textStyle: {
+                    bold: true,
+                    fontSize: 12,
+                    color: '#4d4d4d'
+                },
+                titleTextStyle: {
+                    bold: true,
+                    fontSize: 18,
+                    color: '#4d4d4d'
+                }
+            },
+            vAxis: {
+                title: 'Plans',
+                textStyle: {
+                    fontSize: 14,
+                    bold: true,
+                    color: '#848484'
+                },
+                titleTextStyle: {
+                    fontSize: 14,
+                    bold: true,
+                    color: '#848484'
+                }
+            },
+            isStacked: true,
+            bar: { groupWidth: '50%' },
+        };
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script>
+
+</body>
+</html>
