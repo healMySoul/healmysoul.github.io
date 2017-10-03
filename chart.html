@@ -12,7 +12,14 @@
 <body id="mainBody">
 <div id="mainWrapper">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <div id="chart_div"></div>
+
+    <div class="chart-wrap">
+        <div class="hexagon-wrap">
+            <div class="hexagon"></div>
+        </div>
+
+        <div id="chart_div"></div>
+    </div>
 </div>
 <script src="/js/jquery-3.1.0.min.js"></script>
 <script src="/js/main.js"></script>
@@ -67,5 +74,46 @@
     }
 </script>
 
+<style>
+    .chart-wrap {
+        position: relative;
+    }
+
+    .hexagon-wrap {
+        left: 550px;
+        position: absolute;
+        transform: rotate(90deg);
+        top: 103px;
+        z-index: 10;
+    }
+
+    .hexagon {
+        position: relative;
+        width: 62px;
+        height: 35.80px;
+        background-color: #F4CCAC;
+        margin: 17.90px 0;
+    }
+
+    .hexagon:before,
+    .hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        border-left: 31px solid transparent;
+        border-right: 31px solid transparent;
+    }
+
+    .hexagon:before {
+        bottom: 98%;
+        border-bottom: 17.90px solid #F4CCAC;
+    }
+
+    .hexagon:after {
+        top: 98%;
+        width: 0;
+        border-top: 17.90px solid #F4CCAC;
+    }
+</style>
 </body>
 </html>
