@@ -23,7 +23,7 @@ function initMainContent() {
     loadData();
     
     function loadData() {
-        var $loading = $('<img class="loading" src="/img/loading.gif">');
+        var $loading = $('<img class="loading" src="img/loading.gif">');
         var dataFor = window.location.hash.substr(1);
         
         $('#mainHeader .pageSwitcher').removeClass('sel');
@@ -33,7 +33,7 @@ function initMainContent() {
     
         setTimeout(function() {            
             $.ajax({
-                url: '/include-html/' + dataFor + '.html',
+                url: 'include-html/' + dataFor + '.html',
                 type: 'GET',
                 cache: false,
                 success: function(html) {
@@ -48,7 +48,6 @@ function initWhaleWisdom() {
     var $div = $('#whaleWisdom');
     var $citate = $div.find('.citate');
     var $citateText = $citate.find('.text');
-    var $cursor = $citate.find('.cursor');
     var $author = $div.find('.author');
     
     var citates = [
