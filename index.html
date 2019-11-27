@@ -4,10 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Портфолио: Санакоев Антон</title>
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/main.css">
         <link rel="icon" href="favicon.png" type="image/png">
+        <script src="js/jquery-3.1.0.min.js"></script>
     </head>
     <body id="mainBody">
         <div id="mainWrapper">
@@ -36,8 +34,34 @@
                 </ul>
             </footer>    
         </div>
-        
-        <script src="js/jquery-3.1.0.min.js"></script>
-        <script src="js/main.js"></script>
+
+        <script>
+            let assetsVersion = 2;
+
+            window.onload = function() {
+                let assets = [
+                    {type: 'link', href: 'css/normalize.css'},
+                    {type: 'link', href: 'css/font-awesome.min.css'},
+                    {type: 'link', href: 'css/main.css'},
+                    {type: 'script', src: 'js/main.js'}
+                ];
+                
+                assets.forEach(function (v, i) {
+                    switch (v.type) {
+                        case 'link':
+                            let link = document.createElement('link');
+                            link.rel = 'stylesheet';
+                            link.href = v.href + '?v=' + assetsVersion;
+                            document.head.appendChild(link);
+                            break;
+                        case 'script':
+                            let script = document.createElement('script');
+                            script.src = v.src + '?v=' + assetsVersion;
+                            document.body.appendChild(script);
+                            break;
+                    }
+                });
+            };
+        </script>
     </body>
 </html>
